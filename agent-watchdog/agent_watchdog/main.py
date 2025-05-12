@@ -12,7 +12,7 @@ from agent_watchdog.update_checker import get_installed_agent_version, get_lates
 from agent_watchdog.watchdog_ui import run_ui, WatchdogTrayIcon, WatchdogSignals
 
 # Define the watchdog version
-WATCHDOG_VERSION = "1.0.1" # Initial version, update according to changes
+WATCHDOG_VERSION = "1.0.2" # Incremented version for build
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')

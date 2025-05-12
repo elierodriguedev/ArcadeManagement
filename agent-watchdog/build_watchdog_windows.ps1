@@ -23,7 +23,7 @@ if ($currentDir.Path.StartsWith("\\")) {
 
 # Change to the agent-watchdog directory
 # The Push-Location command at the beginning handles changing to the correct directory.
-# Set-Location agent-watchdog # Removed as Push-Location handles this
+Set-Location agent-watchdog # Change to the agent-watchdog directory
 
 # Install Python dependencies
 Write-Host "Step 1: Installing Python dependencies with pip..."
@@ -49,11 +49,13 @@ Write-Host ""
 if ($BUILD_EXIT_CODE -eq 0) {
     Write-Host "Step 3: Build successful. Moving agent-watchdog.exe to versioned directory..."
 
-    # Extract version from CHANGELOG.md
-    # This uses Select-String to find the first line starting with "## [" and then extracts the version.
-    $line = Get-Content CHANGELOG.md | Select-String -Pattern "## \d+\.\d+\.\d+" | Select-Object -First 1
-    if ($line) {
-        $WATCHDOG_VERSION = $line.ToString() -replace ".*## (\d+\.\d+\.\d+).*", '$1'
+    # Extract version from agent_watchdog/main.py
+    $mainFileContent = Get-Content agent_watchdog/main.py
+    $versionLine = $mainFileContent | Select-String -Pattern @"
+WATCHDOG_VERSION = "(\d+\.\d+\.\d+)"
+"@
+    if ($versionLine) {
+        $WATCHDOG_VERSION = $versionLine.Matches[0].Groups[1].Value
     }
 
     if (-not $WATCHDOG_VERSION) {
