@@ -376,7 +376,7 @@ def download_latest_watchdog():
         # Serve the file for download
         return send_from_directory(
             directory=os.path.join(os.path.dirname(__file__), 'Watchdog', latest_version),
-            path='agent_watchdog.exe',
+            path='agent-watchdog.exe',
             as_attachment=True,
             mimetype='application/octet-stream' # Generic binary file type
         )
