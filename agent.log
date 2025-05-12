@@ -1,0 +1,233 @@
+2025-04-19 14:25:20,003 INFO: --- Starting Arcade Agent v2.1.45 ---
+2025-04-19 14:25:20,003 INFO: Python version: 3.13.3 (tags/v3.13.3:6280bb5, Apr  8 2025, 14:47:33) [MSC v.1943 64 bit (AMD64)]
+2025-04-19 14:25:20,003 INFO: Script directory: Z:\data\ArcadeProject\arcade-web-controller\Agent\2.1.45
+2025-04-19 14:25:20,003 INFO: React static folder path: Z:\data\ArcadeProject\_MEI3002\static/react
+2025-04-19 14:25:20,003 INFO: Running as executable: Z:\data\ArcadeProject\arcade-web-controller\Agent\2.1.45\agent.exe
+2025-04-19 14:28:28,330 INFO: --- Starting Arcade Agent v2.1.45 ---
+2025-04-19 14:28:28,330 INFO: Python version: 3.13.3 (tags/v3.13.3:6280bb5, Apr  8 2025, 14:47:33) [MSC v.1943 64 bit (AMD64)]
+2025-04-19 14:28:28,330 INFO: Script directory: Z:\data\ArcadeProject\arcade-web-controller\Agent\2.1.45
+2025-04-19 14:28:28,330 INFO: React static folder path: Z:\data\ArcadeProject\_MEI3002\static/react
+2025-04-19 14:28:28,331 INFO: Running as executable: Z:\data\ArcadeProject\arcade-web-controller\Agent\2.1.45\agent.exe
+2025-04-19 14:28:28,348 INFO: Created temporary image directory: Z:\data\ArcadeProject\_MEI3002\temp_images
+2025-04-19 14:28:28,348 INFO: Running as: agent.exe in Z:\data\ArcadeProject\_MEI3002
+2025-04-19 14:28:28,348 DEBUG: Scanning for agent executables in: Z:\data\ArcadeProject\_MEI3002
+2025-04-19 14:28:28,352 WARNING: No valid versioned agent executables found.
+2025-04-19 14:28:28,352 INFO: Running latest version found: agent.exe
+2025-04-19 14:28:28,355 WARNING: Could not determine specific subnet broadcast address, using <broadcast>
+2025-04-19 14:28:28,355 INFO: UDP broadcast thread started.
+2025-04-19 14:28:28,355 INFO: Starting UDP broadcast to <broadcast>:5152 every 2 seconds
+2025-04-19 14:28:28,356 INFO: [UpdateCheck] Starting periodic update check thread.
+2025-04-19 14:28:28,356 INFO: Periodic update check thread started.
+2025-04-19 14:28:28,356 INFO: [UpdateCheck] Checking for updates...
+2025-04-19 14:28:28,356 INFO: Starting Flask server on 0.0.0.0:5151
+2025-04-19 14:28:28,368 DEBUG: Starting new HTTPS connection (1): arcade.elierodrigue.cloud:443
+2025-04-19 14:28:28,383 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5151
+ * Running on http://172.17.0.7:5151
+2025-04-19 14:28:28,383 INFO: [33mPress CTRL+C to quit[0m
+2025-04-19 14:28:29,366 DEBUG: https://arcade.elierodrigue.cloud:443 "GET /api/agent/latest_version HTTP/1.1" 200 None
+2025-04-19 14:28:29,367 INFO: [UpdateCheck] Current version: 2.1.35, Latest version available: 2.1.45
+2025-04-19 14:28:29,367 INFO: [UpdateCheck] Newer version (2.1.45) found. Downloading update...
+2025-04-19 14:28:29,372 DEBUG: Starting new HTTPS connection (1): arcade.elierodrigue.cloud:443
+2025-04-19 14:28:30,354 DEBUG: https://arcade.elierodrigue.cloud:443 "GET /api/agent/download/latest HTTP/1.1" 200 18693867
+2025-04-19 14:28:33,200 INFO: [UpdateCheck] Downloaded new agent to agent_new.exe. Generating update script...
+2025-04-19 14:28:33,203 INFO: [UpdateCheck] Update script written to update.bat. Launching script and exiting...
+2025-04-19 14:28:33,226 INFO: [UpdateCheck] Update script launched successfully. Relying on taskkill in batch script to stop current agent process.
+2025-04-19 14:28:42,217 INFO: --- Starting Arcade Agent v2.1.45 ---
+2025-04-19 14:28:42,217 INFO: Python version: 3.13.3 (tags/v3.13.3:6280bb5, Apr  8 2025, 14:47:33) [MSC v.1943 64 bit (AMD64)]
+2025-04-19 14:28:42,217 INFO: Script directory: Z:\data\ArcadeProject
+2025-04-19 14:28:42,217 INFO: React static folder path: Z:\data\ArcadeProject\_MEI3602\static/react
+2025-04-19 14:28:42,217 INFO: Running as executable: Z:\data\ArcadeProject\agent.exe
+2025-04-19 14:28:42,235 INFO: Created temporary image directory: Z:\data\ArcadeProject\_MEI3602\temp_images
+2025-04-19 14:28:42,235 INFO: Running as: agent.exe in Z:\data\ArcadeProject\_MEI3602
+2025-04-19 14:28:42,235 DEBUG: Scanning for agent executables in: Z:\data\ArcadeProject\_MEI3602
+2025-04-19 14:28:42,239 WARNING: No valid versioned agent executables found.
+2025-04-19 14:28:42,239 INFO: Running latest version found: agent.exe
+2025-04-19 14:28:42,240 INFO: Found existing update batch file: update.bat. This indicates a previous update attempt may have occurred.
+2025-04-19 14:28:42,242 WARNING: Could not determine specific subnet broadcast address, using <broadcast>
+2025-04-19 14:28:42,242 INFO: UDP broadcast thread started.
+2025-04-19 14:28:42,242 INFO: Starting UDP broadcast to <broadcast>:5152 every 2 seconds
+2025-04-19 14:28:42,243 INFO: [UpdateCheck] Starting periodic update check thread.
+2025-04-19 14:28:42,243 INFO: Periodic update check thread started.
+2025-04-19 14:28:42,243 INFO: [UpdateCheck] Checking for updates...
+2025-04-19 14:28:42,243 INFO: Starting Flask server on 0.0.0.0:5151
+2025-04-19 14:28:42,254 DEBUG: Starting new HTTPS connection (1): arcade.elierodrigue.cloud:443
+2025-04-19 14:28:53,229 INFO: [UpdateCheck] Checking for updates...
+2025-04-19 14:28:53,234 DEBUG: Starting new HTTPS connection (1): arcade.elierodrigue.cloud:443
+2025-04-19 14:28:54,139 DEBUG: https://arcade.elierodrigue.cloud:443 "GET /api/agent/latest_version HTTP/1.1" 200 None
+2025-04-19 14:28:54,140 INFO: [UpdateCheck] Current version: 2.1.35, Latest version available: 2.1.45
+2025-04-19 14:28:54,141 INFO: [UpdateCheck] Newer version (2.1.45) found. Downloading update...
+2025-04-19 14:28:54,145 DEBUG: Starting new HTTPS connection (1): arcade.elierodrigue.cloud:443
+2025-04-19 14:28:55,066 DEBUG: https://arcade.elierodrigue.cloud:443 "GET /api/agent/download/latest HTTP/1.1" 200 18693867
+2025-04-19 14:28:58,042 INFO: [UpdateCheck] Downloaded new agent to agent_new.exe. Generating update script...
+2025-04-19 14:28:58,045 INFO: [UpdateCheck] Update script written to update.bat. Launching script and exiting...
+2025-04-19 14:28:58,061 INFO: [UpdateCheck] Update script launched successfully. Relying on taskkill in batch script to stop current agent process.
+2025-04-19 14:29:06,133 INFO: --- Starting Arcade Agent v2.1.45 ---
+2025-04-19 14:29:06,133 INFO: Python version: 3.13.3 (tags/v3.13.3:6280bb5, Apr  8 2025, 14:47:33) [MSC v.1943 64 bit (AMD64)]
+2025-04-19 14:29:06,133 INFO: Script directory: Z:\data\ArcadeProject
+2025-04-19 14:29:06,133 INFO: React static folder path: Z:\data\ArcadeProject\_MEI4242\static/react
+2025-04-19 14:29:06,133 INFO: Running as executable: Z:\data\ArcadeProject\agent.exe
+2025-04-19 14:29:06,151 INFO: Created temporary image directory: Z:\data\ArcadeProject\_MEI4242\temp_images
+2025-04-19 14:29:06,152 INFO: Running as: agent.exe in Z:\data\ArcadeProject\_MEI4242
+2025-04-19 14:29:06,152 DEBUG: Scanning for agent executables in: Z:\data\ArcadeProject\_MEI4242
+2025-04-19 14:29:06,155 WARNING: No valid versioned agent executables found.
+2025-04-19 14:29:06,155 INFO: Running latest version found: agent.exe
+2025-04-19 14:29:06,156 INFO: Found existing update batch file: update.bat. This indicates a previous update attempt may have occurred.
+2025-04-19 14:29:06,158 WARNING: Could not determine specific subnet broadcast address, using <broadcast>
+2025-04-19 14:29:06,158 INFO: UDP broadcast thread started.
+2025-04-19 14:29:06,158 INFO: Starting UDP broadcast to <broadcast>:5152 every 2 seconds
+2025-04-19 14:29:06,159 INFO: [UpdateCheck] Starting periodic update check thread.
+2025-04-19 14:29:06,159 INFO: Periodic update check thread started.
+2025-04-19 14:29:06,159 INFO: [UpdateCheck] Checking for updates...
+2025-04-19 14:29:06,160 INFO: Starting Flask server on 0.0.0.0:5151
+2025-04-19 14:29:06,171 DEBUG: Starting new HTTPS connection (1): arcade.elierodrigue.cloud:443
+2025-04-19 15:10:48,079 INFO: --- Starting Arcade Agent v2.1.46 ---
+2025-04-19 15:10:48,079 INFO: Python version: 3.13.3 (tags/v3.13.3:6280bb5, Apr  8 2025, 14:47:33) [MSC v.1943 64 bit (AMD64)]
+2025-04-19 15:10:48,079 INFO: Script directory: Z:\data\ArcadeProject\arcade-web-controller\Agent\2.1.46
+2025-04-19 15:10:48,079 INFO: React static folder path: Z:\data\ArcadeProject\_MEI3003\static/react
+2025-04-19 15:10:48,079 INFO: Running as executable: Z:\data\ArcadeProject\arcade-web-controller\Agent\2.1.46\agent.exe
+2025-04-19 15:15:57,480 INFO: --- Starting Arcade Agent v2.1.46 ---
+2025-04-19 15:15:57,480 INFO: Python version: 3.13.3 (tags/v3.13.3:6280bb5, Apr  8 2025, 14:47:33) [MSC v.1943 64 bit (AMD64)]
+2025-04-19 15:15:57,480 INFO: Script directory: Z:\data\ArcadeProject\arcade-web-controller\Agent\2.1.46
+2025-04-19 15:15:57,480 INFO: React static folder path: Z:\data\ArcadeProject\_MEI2962\static/react
+2025-04-19 15:15:57,480 INFO: Running as executable: Z:\data\ArcadeProject\arcade-web-controller\Agent\2.1.46\agent.exe
+2025-04-19 15:15:57,498 INFO: Created temporary image directory: Z:\data\ArcadeProject\_MEI2962\temp_images
+2025-04-19 15:19:51,336 INFO: --- Starting Arcade Agent v2.1.46 ---
+2025-04-19 15:19:51,336 INFO: Python version: 3.13.3 (tags/v3.13.3:6280bb5, Apr  8 2025, 14:47:33) [MSC v.1943 64 bit (AMD64)]
+2025-04-19 15:19:51,336 INFO: Script directory: Z:\data\ArcadeProject\arcade-web-controller\Agent\2.1.46
+2025-04-19 15:19:51,336 INFO: React static folder path: Z:\data\ArcadeProject\_MEI2962\static/react
+2025-04-19 15:19:51,337 INFO: Running as executable: Z:\data\ArcadeProject\arcade-web-controller\Agent\2.1.46\agent.exe
+2025-04-19 15:19:51,355 INFO: Created temporary image directory: Z:\data\ArcadeProject\_MEI2962\temp_images
+2025-04-19 15:19:51,355 INFO: Running as: agent.exe in Z:\data\ArcadeProject\_MEI2962
+2025-04-19 15:19:51,355 DEBUG: Scanning for agent executables in: Z:\data\ArcadeProject\_MEI2962
+2025-04-19 15:19:51,359 WARNING: No valid versioned agent executables found.
+2025-04-19 15:19:51,359 INFO: Running latest version found: agent.exe
+2025-04-19 15:19:51,360 INFO: Found existing update batch file: update.bat. This indicates a previous update attempt may have occurred.
+2025-04-19 15:19:51,360 INFO: UDP broadcast thread started.
+2025-04-19 15:19:51,361 INFO: Periodic update check thread started.
+2025-04-19 15:19:51,361 INFO: Starting Flask server on 0.0.0.0:5151
+2025-04-19 15:19:51,387 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5151
+ * Running on http://172.17.0.7:5151
+2025-04-19 15:19:51,387 INFO: [33mPress CTRL+C to quit[0m
+2025-04-19 15:23:54,434 INFO: --- Starting Arcade Agent v2.1.46 ---
+2025-04-19 15:23:54,434 INFO: Python version: 3.13.3 (tags/v3.13.3:6280bb5, Apr  8 2025, 14:47:33) [MSC v.1943 64 bit (AMD64)]
+2025-04-19 15:23:54,435 INFO: Script directory: Z:\data\ArcadeProject\arcade-web-controller\Agent\2.1.46
+2025-04-19 15:23:54,435 INFO: React static folder path: Z:\data\ArcadeProject\_MEI2962\static/react
+2025-04-19 15:23:54,435 INFO: Running as executable: Z:\data\ArcadeProject\arcade-web-controller\Agent\2.1.46\agent.exe
+2025-04-19 15:23:54,453 INFO: Created temporary image directory: Z:\data\ArcadeProject\_MEI2962\temp_images
+2025-04-19 15:23:54,454 INFO: Running as: agent.exe in Z:\data\ArcadeProject\_MEI2962
+2025-04-19 15:23:54,454 DEBUG: Scanning for agent executables in: Z:\data\ArcadeProject\_MEI2962
+2025-04-19 15:23:54,457 WARNING: No valid versioned agent executables found.
+2025-04-19 15:23:54,457 INFO: Running latest version found: agent.exe
+2025-04-19 15:23:54,458 INFO: Found existing update batch file: update.bat. This indicates a previous update attempt may have occurred.
+2025-04-19 15:23:54,460 WARNING: Could not determine specific subnet broadcast address, using <broadcast>
+2025-04-19 15:23:54,460 INFO: UDP broadcast thread started.
+2025-04-19 15:23:54,460 INFO: Starting UDP broadcast to <broadcast>:5152 every 2 seconds
+2025-04-19 15:23:54,461 ERROR: Error in UDP broadcast loop: get_ping_payload() takes 0 positional arguments but 1 was given
+2025-04-19 15:23:54,461 INFO: [UpdateCheck] Starting periodic update check thread.
+2025-04-19 15:23:54,461 INFO: Periodic update check thread started.
+2025-04-19 15:23:54,461 INFO: Starting Flask server on 0.0.0.0:5151
+2025-04-19 15:23:54,487 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5151
+ * Running on http://172.17.0.7:5151
+2025-04-19 15:23:54,487 INFO: [33mPress CTRL+C to quit[0m
+2025-04-19 15:24:01,461 ERROR: Error in UDP broadcast loop: get_ping_payload() takes 0 positional arguments but 1 was given
+2025-04-19 15:24:08,462 ERROR: Error in UDP broadcast loop: get_ping_payload() takes 0 positional arguments but 1 was given
+2025-04-19 15:24:15,463 ERROR: Error in UDP broadcast loop: get_ping_payload() takes 0 positional arguments but 1 was given
+2025-04-19 15:24:22,464 ERROR: Error in UDP broadcast loop: get_ping_payload() takes 0 positional arguments but 1 was given
+2025-04-19 15:24:29,464 ERROR: Error in UDP broadcast loop: get_ping_payload() takes 0 positional arguments but 1 was given
+2025-04-19 15:24:36,465 ERROR: Error in UDP broadcast loop: get_ping_payload() takes 0 positional arguments but 1 was given
+2025-04-19 15:24:43,466 ERROR: Error in UDP broadcast loop: get_ping_payload() takes 0 positional arguments but 1 was given
+2025-04-19 15:24:50,466 ERROR: Error in UDP broadcast loop: get_ping_payload() takes 0 positional arguments but 1 was given
+2025-04-19 15:24:57,467 ERROR: Error in UDP broadcast loop: get_ping_payload() takes 0 positional arguments but 1 was given
+2025-04-19 15:29:07,230 INFO: --- Starting Arcade Agent v2.1.46 ---
+2025-04-19 15:29:07,230 INFO: Python version: 3.13.3 (tags/v3.13.3:6280bb5, Apr  8 2025, 14:47:33) [MSC v.1943 64 bit (AMD64)]
+2025-04-19 15:29:07,230 INFO: Script directory: Z:\data\ArcadeProject\arcade-web-controller\Agent\2.1.46
+2025-04-19 15:29:07,230 INFO: React static folder path: Z:\data\ArcadeProject\_MEI3003\static/react
+2025-04-19 15:29:07,230 INFO: Running as executable: Z:\data\ArcadeProject\arcade-web-controller\Agent\2.1.46\agent.exe
+2025-04-19 15:29:07,249 INFO: Created temporary image directory: Z:\data\ArcadeProject\_MEI3003\temp_images
+2025-04-19 15:29:07,249 INFO: Running as: agent.exe in Z:\data\ArcadeProject\_MEI3003
+2025-04-19 15:29:07,249 DEBUG: Scanning for agent executables in: Z:\data\ArcadeProject\_MEI3003
+2025-04-19 15:29:07,253 WARNING: No valid versioned agent executables found.
+2025-04-19 15:29:07,253 INFO: Running latest version found: agent.exe
+2025-04-19 15:29:07,253 INFO: Found existing update batch file: update.bat. This indicates a previous update attempt may have occurred.
+2025-04-19 15:29:07,256 WARNING: Could not determine specific subnet broadcast address, using <broadcast>
+2025-04-19 15:29:07,256 INFO: UDP broadcast thread started.
+2025-04-19 15:29:07,256 INFO: Starting UDP broadcast to <broadcast>:5152 every 2 seconds
+2025-04-19 15:29:07,256 ERROR: Error in UDP broadcast loop: get_ping_payload() takes 0 positional arguments but 1 was given
+2025-04-19 15:29:07,256 INFO: [UpdateCheck] Starting periodic update check thread.
+2025-04-19 15:29:07,256 INFO: Periodic update check thread started.
+2025-04-19 15:29:07,257 INFO: Starting Flask server on 0.0.0.0:5151
+2025-04-19 15:29:07,281 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5151
+ * Running on http://172.17.0.7:5151
+2025-04-19 15:29:07,281 INFO: [33mPress CTRL+C to quit[0m
+2025-04-19 15:29:14,257 ERROR: Error in UDP broadcast loop: get_ping_payload() takes 0 positional arguments but 1 was given
+2025-04-19 15:29:21,258 ERROR: Error in UDP broadcast loop: get_ping_payload() takes 0 positional arguments but 1 was given
+2025-04-19 15:29:28,258 ERROR: Error in UDP broadcast loop: get_ping_payload() takes 0 positional arguments but 1 was given
+2025-04-19 15:29:35,259 ERROR: Error in UDP broadcast loop: get_ping_payload() takes 0 positional arguments but 1 was given
+2025-04-19 15:29:42,260 ERROR: Error in UDP broadcast loop: get_ping_payload() takes 0 positional arguments but 1 was given
+2025-04-19 15:29:49,261 ERROR: Error in UDP broadcast loop: get_ping_payload() takes 0 positional arguments but 1 was given
+2025-04-19 15:29:56,261 ERROR: Error in UDP broadcast loop: get_ping_payload() takes 0 positional arguments but 1 was given
+2025-04-19 15:30:03,262 ERROR: Error in UDP broadcast loop: get_ping_payload() takes 0 positional arguments but 1 was given
+2025-04-19 15:30:10,263 ERROR: Error in UDP broadcast loop: get_ping_payload() takes 0 positional arguments but 1 was given
+2025-04-19 15:30:17,264 ERROR: Error in UDP broadcast loop: get_ping_payload() takes 0 positional arguments but 1 was given
+2025-04-19 15:30:24,265 ERROR: Error in UDP broadcast loop: get_ping_payload() takes 0 positional arguments but 1 was given
+2025-04-19 15:30:31,265 ERROR: Error in UDP broadcast loop: get_ping_payload() takes 0 positional arguments but 1 was given
+2025-04-19 15:30:38,266 ERROR: Error in UDP broadcast loop: get_ping_payload() takes 0 positional arguments but 1 was given
+2025-04-19 15:30:45,267 ERROR: Error in UDP broadcast loop: get_ping_payload() takes 0 positional arguments but 1 was given
+2025-04-19 15:30:52,268 ERROR: Error in UDP broadcast loop: get_ping_payload() takes 0 positional arguments but 1 was given
+2025-04-19 15:30:59,268 ERROR: Error in UDP broadcast loop: get_ping_payload() takes 0 positional arguments but 1 was given
+2025-04-19 15:31:06,269 ERROR: Error in UDP broadcast loop: get_ping_payload() takes 0 positional arguments but 1 was given
+2025-04-19 15:31:13,270 ERROR: Error in UDP broadcast loop: get_ping_payload() takes 0 positional arguments but 1 was given
+2025-04-19 15:31:20,271 ERROR: Error in UDP broadcast loop: get_ping_payload() takes 0 positional arguments but 1 was given
+2025-04-19 15:31:27,272 ERROR: Error in UDP broadcast loop: get_ping_payload() takes 0 positional arguments but 1 was given
+2025-04-19 15:31:34,273 ERROR: Error in UDP broadcast loop: get_ping_payload() takes 0 positional arguments but 1 was given
+2025-04-19 15:31:41,273 ERROR: Error in UDP broadcast loop: get_ping_payload() takes 0 positional arguments but 1 was given
+2025-04-19 15:31:48,274 ERROR: Error in UDP broadcast loop: get_ping_payload() takes 0 positional arguments but 1 was given
+2025-04-19 15:31:55,275 ERROR: Error in UDP broadcast loop: get_ping_payload() takes 0 positional arguments but 1 was given
+2025-04-19 15:32:02,275 ERROR: Error in UDP broadcast loop: get_ping_payload() takes 0 positional arguments but 1 was given
+2025-04-19 15:32:09,276 ERROR: Error in UDP broadcast loop: get_ping_payload() takes 0 positional arguments but 1 was given
+2025-04-19 15:32:16,277 ERROR: Error in UDP broadcast loop: get_ping_payload() takes 0 positional arguments but 1 was given
+2025-04-19 15:32:23,277 ERROR: Error in UDP broadcast loop: get_ping_payload() takes 0 positional arguments but 1 was given
+2025-04-19 15:32:30,278 ERROR: Error in UDP broadcast loop: get_ping_payload() takes 0 positional arguments but 1 was given
+2025-04-19 15:32:37,279 ERROR: Error in UDP broadcast loop: get_ping_payload() takes 0 positional arguments but 1 was given
+2025-04-19 15:32:44,279 ERROR: Error in UDP broadcast loop: get_ping_payload() takes 0 positional arguments but 1 was given
+2025-04-19 15:32:51,280 ERROR: Error in UDP broadcast loop: get_ping_payload() takes 0 positional arguments but 1 was given
+2025-04-19 15:32:58,281 ERROR: Error in UDP broadcast loop: get_ping_payload() takes 0 positional arguments but 1 was given
+2025-04-19 15:33:05,281 ERROR: Error in UDP broadcast loop: get_ping_payload() takes 0 positional arguments but 1 was given
+2025-04-19 15:33:12,282 ERROR: Error in UDP broadcast loop: get_ping_payload() takes 0 positional arguments but 1 was given
+2025-04-19 15:33:19,283 ERROR: Error in UDP broadcast loop: get_ping_payload() takes 0 positional arguments but 1 was given
+2025-04-19 15:36:43,406 INFO: --- Starting Arcade Agent v2.1.46 ---
+2025-04-19 15:36:43,407 INFO: Python version: 3.13.3 (tags/v3.13.3:6280bb5, Apr  8 2025, 14:47:33) [MSC v.1943 64 bit (AMD64)]
+2025-04-19 15:36:43,407 INFO: Script directory: Z:\data\ArcadeProject\arcade-web-controller\Agent\2.1.46
+2025-04-19 15:36:43,407 INFO: React static folder path: Z:\data\ArcadeProject\_MEI3003\static/react
+2025-04-19 15:36:43,407 INFO: Running as executable: Z:\data\ArcadeProject\arcade-web-controller\Agent\2.1.46\agent.exe
+2025-04-19 15:36:43,425 INFO: Created temporary image directory: Z:\data\ArcadeProject\_MEI3003\temp_images
+2025-04-19 15:36:43,425 INFO: Running as: agent.exe in Z:\data\ArcadeProject\_MEI3003
+2025-04-19 15:36:43,425 DEBUG: Scanning for agent executables in: Z:\data\ArcadeProject\_MEI3003
+2025-04-19 15:36:43,429 WARNING: No valid versioned agent executables found.
+2025-04-19 15:36:43,429 INFO: Running latest version found: agent.exe
+2025-04-19 15:36:43,429 INFO: Found existing update batch file: update.bat. This indicates a previous update attempt may have occurred.
+2025-04-19 15:36:43,432 WARNING: Could not determine specific subnet broadcast address, using <broadcast>
+2025-04-19 15:36:43,432 INFO: UDP broadcast thread started.
+2025-04-19 15:36:43,432 INFO: Starting UDP broadcast to <broadcast>:5152 every 2 seconds
+2025-04-19 15:36:43,432 ERROR: Error in UDP broadcast loop: get_ping_payload() takes 0 positional arguments but 1 was given
+2025-04-19 15:36:43,433 INFO: [UpdateCheck] Starting periodic update check thread.
+2025-04-19 15:36:43,433 INFO: Periodic update check thread started.
+2025-04-19 15:36:43,433 INFO: [UpdateCheck] Checking for updates...
+2025-04-19 15:36:43,433 INFO: Starting Flask server on 0.0.0.0:5151
+2025-04-19 15:36:43,445 DEBUG: Starting new HTTPS connection (1): arcade.elierodrigue.cloud:443
+2025-04-19 15:36:43,460 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5151
+ * Running on http://172.17.0.7:5151
+2025-04-19 15:36:43,460 INFO: [33mPress CTRL+C to quit[0m
+2025-04-19 15:36:44,385 DEBUG: https://arcade.elierodrigue.cloud:443 "GET /api/agent/latest_version HTTP/1.1" 200 None
+2025-04-19 15:36:44,386 INFO: [UpdateCheck] Current version: 2.1.46, Latest version available: 2.1.46
+2025-04-19 15:36:44,386 INFO: [UpdateCheck] Agent is running the latest version.

@@ -1,0 +1,16 @@
+# Ignore built files and directories
+agent.exe
+_MEI*/
+**/build/
+**/dist/
+**/*.spec
+**/*.pyd
+**/*.dll
+**/*.exe
+**/*.egg-info/
+**/python/Lib/site-packages/
+**/__pycache__/
+**/*.pyc
+**/.venv/
+**/venv/
+**/env/

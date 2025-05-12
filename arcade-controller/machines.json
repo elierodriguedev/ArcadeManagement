@@ -1,0 +1,14 @@
+[
+  {
+    "hostname": "Simpsons",
+    "type": "arcade"
+  },
+  {
+    "hostname": "Tekno",
+    "type": "arcade"
+  },
+  {
+    "hostname": "ElieDesktop",
+    "type": "arcade"
+  }
+]

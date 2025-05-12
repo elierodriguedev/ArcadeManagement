@@ -1,0 +1,463 @@
+:root {
+  /* === UI Color Palette === */
+  --bg-main: #1e1e2f; /* Very dark blue-gray */
+  --bg-header: #2b2c3b; /* Card/Panel BG */
+  --primary-text: #ffffff; /* Clean white */
+  --secondary-text: #a0a3b1; /* Muted light gray */
+  --accent: #4cc9f0; /* Bright blue for focus */
+  --success: #43aa8b; /* Green for healthy systems */
+  --warning: #f9c74f; /* Yellow-orange for warnings */
+  --error: #f94144; /* Bright red for alerts */
+  --chart-line: #577590; /* Soft blue-gray for charts */
+  --chart-fill: #4cc9f020; /* 20% opacity blue for chart fill */
+  --border: #3a3b4f; /* Subtle divider lines */
+
+  --radius: 12px;
+  --font-main: 'Inter', 'Roboto', 'SF Pro', Arial, sans-serif;
+}
+
+body {
+  background: var(--bg-main);
+  color: var(--primary-text);
+  font-family: var(--font-main);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+.App {
+  max-width: 950px;
+  margin: 40px auto;
+  background: var(--bg-header);
+  border-radius: var(--radius);
+  box-shadow: 0 1px 8px 0 rgba(0,0,0,0.10);
+  overflow: hidden;
+}
+
+header {
+  background: var(--bg-header);
+  padding: 24px 32px 12px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-bottom: 1px solid var(--border);
+}
+
+header h1 {
+  background: linear-gradient(90deg, #4cc9f0 40%, #3a86ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 2px 8px rgba(76,201,240,0.25);
+  font-family: var(--font-main);
+  padding-top: 18px;
+  line-height: 1.1;
+  margin: 0 0 8px 0;
+  font-size: 2.1rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--accent);
+}
+
+header > div {
+  color: #cccccc;
+  opacity: 0.8;
+  font-family: var(--font-main);
+  font-size: 1rem;
+  color: var(--secondary-text);
+  margin-bottom: 10px;
+}
+
+nav {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 0;
+}
+
+nav button {
+  background: none;
+  border: none;
+  color: var(--secondary-text);
+  padding: 10px 22px;
+  font-size: 1.05rem;
+  border-radius: var(--radius) var(--radius) 0 0;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  font-weight: 500;
+  outline: none;
+}
+
+nav button.active,
+nav button:hover {
+  background: var(--accent);
+  color: var(--primary-text);
+}
+
+main {
+  padding: 32px;
+  min-height: 400px;
+}
+
+/* Modern Tab Styles */
+.tabs {
+    display: flex;
+    margin-bottom: 0; /* Removed bottom margin */
+    padding-bottom: 0; /* Removed bottom padding */
+    border-bottom: 1px solid var(--border); /* Keep the main border */
+}
+
+.tab-list {
+    display: flex; /* Ensure tab buttons are in a flex container */
+    border-bottom: 1px solid var(--border); /* Add bottom border to the tab list */
+    margin-bottom: 20px; /* Add margin below the tab list */
+}
+
+.tab-button {
+    padding: 10px 15px; /* Adjusted padding */
+    cursor: pointer;
+    border: none;
+    background: none;
+    font-size: 1em;
+    margin-right: 0;
+    border-bottom: 3px solid transparent;
+    transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    color: var(--secondary-text);
+    display: flex; /* Added flex for icon alignment */
+    align-items: center; /* Added align-items for icon alignment */
+}
+
+.tab-button.active {
+    border-bottom: 3px solid #6200EE; /* Purple color from screenshot */
+    font-weight: 600; /* Adjusted font weight */
+    color: #6200EE; /* Purple color from screenshot */
+}
+
+.tab-button:hover:not(.active) {
+    color: var(--primary-text); /* Hover color */
+}
+
+/* .tab-content { display: none; } */ /* React handles showing/hiding */
+.tab-content.active {
+    display: block;
+}
+
+
+.status-info,
+.game-grid,
+#log-output {
+  background: var(--bg-header);
+  border-radius: var(--radius);
+  padding: 18px 22px;
+  margin-top: 18px;
+  box-shadow: 0 1px 8px 0 rgba(0,0,0,0.10);
+  color: #f5f7fa;
+}
+
+.status-info label, .status-info strong, .status-info .label {
+  color: var(--accent);
+}
+
+.status-info .value {
+  color: var(--primary-text);
+  font-weight: 600;
+}
+
+#log-output {
+  color: var(--primary-text);
+  font-family: 'Fira Mono', 'Consolas', 'Menlo', 'monospace';
+  font-size: 1.07rem;
+  max-height: 350px;
+  overflow-y: auto;
+  background: var(--bg-main);
+  color: var(--secondary-text);
+  margin-top: 10px;
+  border: 1px solid var(--border);
+  white-space: pre-wrap;
+}
+
+h1, h2 {
+    text-align: center;
+    color: var(--primary-text);
+}
+h3 { /* Added basic h3 style */
+    color: var(--primary-text);
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+    margin-top: 30px;
+}
+
+.status-info label,
+.status-info strong {
+  color: var(--accent);
+}
+
+.status-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.progress-container {
+    margin-top: 10px;
+}
+
+.progress-label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 0.9em;
+    color: var(--secondary-text);
+}
+
+progress {
+    width: 100%;
+    height: 20px;
+    /* Consider adding vendor prefixes for better browser compatibility if needed */
+    appearance: none; /* Needed for custom styling in some browsers */
+}
+/* Basic progress bar styling */
+progress::-webkit-progress-bar {
+    background: var(--border);
+    border-radius: 3px;
+}
+progress::-webkit-progress-value {
+  background: linear-gradient(90deg, #4cc9f0 0%, #3a86ff 100%);
+  box-shadow: 0 0 8px 2px #4cc9f099;
+  background: var(--accent);
+  border-radius: 3px;
+  transition: width 0.5s ease;
+}
+progress::-moz-progress-bar { /* Firefox */
+  background: linear-gradient(90deg, #4cc9f0 0%, #3a86ff 100%);
+  box-shadow: 0 0 8px 2px #4cc9f099;
+  background: var(--accent);
+  border-radius: 3px;
+  transition: width 0.5s ease;
+}
+
+
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 28px;
+  margin-top: 28px;
+  padding: 0 8px;
+  width: 100%;
+}
+
+.card {
+  background: rgba(44,45,58,0.95);
+  border-radius: 18px;
+  box-shadow: 0 4px 24px 0 rgba(44,47,60,0.18), 0 0 0 2px transparent;
+  transition: box-shadow 0.18s cubic-bezier(.4,2,.6,1), transform 0.18s cubic-bezier(.4,2,.6,1);
+  padding: 22px 14px 18px 14px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 220px;
+  position: relative;
+  cursor: pointer;
+  border: 1.5px solid var(--border);
+}
+.card:hover, .card:focus {
+  box-shadow: 0 0 0 3px #4cc9f0, 0 8px 32px 0 #4cc9f044;
+  transform: scale(1.035);
+  z-index: 2;
+  border-color: #4cc9f0;
+}
+
+.card img {
+  display: block;
+  margin: 0 auto 14px auto;
+  max-width: 100%;
+  max-height: 72px;
+  object-fit: contain;
+  aspect-ratio: 16/9;
+  background: transparent;
+  border-radius: 10px;
+  box-shadow: none;
+}
+
+.card p {
+  margin: 0;
+  font-size: 1.08em;
+  font-weight: 600;
+  color: #e0e0e0;
+  text-align: center;
+  line-height: 1.22;
+  letter-spacing: 0.01em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-family: var(--font-main);
+}
+
+.card .platform {
+  display: block;
+  font-size: 0.98em;
+  opacity: 0.6;
+  color: #b0b8c9;
+  margin-top: 2px;
+  font-weight: 500;
+  font-family: var(--font-main);
+}
+
+.card .card-footer {
+  margin-top: 16px;
+  font-size: 0.95em;
+  color: #a0a3b1;
+  opacity: 0.85;
+  text-align: center;
+}
+
+.card p em { /* Style platform name */
+    font-size: 0.9em;
+    color: var(--secondary-text);
+}
+
+
+#start-bigbox-button, #stop-bigbox-button {
+  border: 2px solid var(--accent);
+  box-shadow: 0 0 8px 2px #4cc9f099;
+  font-family: var(--font-main);
+}
+
+#start-bigbox-button:hover, #stop-bigbox-button:hover {
+  box-shadow: 0 0 16px 4px #4cc9f0cc;
+  filter: brightness(1.15);
+}
+
+#start-bigbox-button, #stop-bigbox-button {
+    background: var(--success);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.2s ease-in-out;
+}
+
+#start-bigbox-button:hover {
+    background: var(--success);
+}
+
+#stop-bigbox-button {
+    background: var(--error);
+}
+
+#stop-bigbox-button:hover {
+    background: var(--error);
+}
+
+.log-entry {
+    font-family: 'Fira Mono', 'Consolas', 'Menlo', 'monospace';
+    font-size: 0.9em;
+    white-space: pre-wrap; /* Preserve whitespace and wrap text */
+    word-break: break-all; /* Break long words */
+    margin-bottom: 5px;
+    padding: 2px 0;
+    border-bottom: 1px dotted var(--border);
+}
+
+.log-entry.info {
+    color: var(--secondary-text);
+}
+
+.log-entry.warning {
+    color: var(--warning);
+}
+
+.log-entry.error {
+    color: var(--error);
+}
+
+.log-entry.success {
+    color: var(--success);
+}
+
+.log-entry .timestamp {
+    color: var(--accent);
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.log-entry .level {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.log-entry .message {
+    flex-grow: 1;
+}
+
+.log-entry .copy-button {
+    margin-left: 10px;
+    padding: 3px 8px; /* Slightly larger padding */
+    font-size: 0.8em;
+    cursor: pointer;
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    background: var(--bg-header);
+    color: var(--secondary-text);
+    transition: background-color 0.2s ease-in-out;
+}
+
+.log-entry .copy-button:hover {
+    background: var(--border);
+    border-color: var(--border);
+}
+
+.log-entry .copy-button:active {
+    background: var(--accent);
+    color: var(--primary-text);
+}
+
+.log-entry .copy-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.log-entry .copy-button.copied {
+    background: var(--success);
+    color: white;
+}
+
+.log-entry .copy-button.copied:hover {
+    background: var(--success);
+    color: white;
+}
+
+.log-entry .copy-button.copied:active {
+    background: var(--success);
+    color: white;
+}
+
+.log-entry .copy-button.copied:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.log-entry .copy-button.copied::after {
+    content: " Copied!";
+}
+
+.log-entry .copy-button.copied::before {
+    content: "✓ ";
+}
+
+.log-entry .copy-button.copied::after, .log-entry .copy-button.copied::before {
+    font-weight: bold;
+}
+
+.log-entry .copy-button.copied::after {
+    margin-left: 5px;
+}
+
+.log-entry .copy-button.copied::before {
+    margin-right: 5px;
+}
+
+.log-entry .copy-button.copied::after, .log-entry .copy-button.copied::before {
+    display: inline-block;
+}

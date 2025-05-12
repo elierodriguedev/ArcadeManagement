@@ -1,0 +1,48 @@
+# .clinerules
+
+# Project information:
+# A readme.txt file a the root define the overall project information and needs to be kept up to date.
+# Each sub project forder also contains its own readme file describing the sub project and its structure. You also need to keep it up to date.
+
+# Task Completion:
+# A task is considered complete only when explicitly confirmed by the user.
+# I will ask for confirmation when I believe the task is finished, but will not proceed to final completion without user approval.
+
+# Agent Development and Building:
+# When changes are made to the agent's React UI or Python script:
+# 1. Increment the version number in the relevant agent code (Python script NOT React UI package.json).
+# 2. Add a corresponding entry to the agent's CHANGELOG.md file.
+# 3. Execute the `build_agent_windows.sh` script for Linux or `build_agent_windows.ps1` for Windows to build the updated agent executable.
+# If there's any error, you need to fix them.
+# The agent version in the agent's changelog need to absolutely match the latest version in the agent.py file. Always validate this before you build and correct if there's any issue.
+
+
+# Watchdog Development and Building:
+# When changes are made to the watchdog's Python script:
+# 1. Increment the version number in the relevant watchdog code (e.g., agent-watchdog/agent_watchdog/main.py).
+# 2. Add a corresponding entry to the watchdog's CHANGELOG.md file.
+# 3. Execute the `agent-watchdog/build_watchdog_windows.sh` script for Linux or `agent-watchdog/build_watchdog_windows.ps1` for Windows to build the updated watchdog executable.
+# If there's any error, you need to fix them.
+# The watchdog version in the watchdog's changelog need to absolutely match the latest version in the relevant watchdog code. Always validate this before you build and correct if there's any issue.
+
+
+# Agent Execution:
+# I should not attempt to run the agent Python script directly.
+
+# Web Controller URL:
+# The URL for the web controller is https://arcade.elierodrigue.cloud/.
+# Updates to the agent will apply directly to this controller.
+# I should never attempt to use an 'open' command for this URL.
+
+# Build Script Integrity:
+# The `build_agent_windows.sh` script should not be modified unless explicitly instructed by the user.
+
+
+# React UI Versioning:
+# If the React UI needs to be recompiled, the version number of the agent must be incremented in the relevant files and the agent must be rebuilt using `build_agent_windows.sh`.
+# I should not modify the React UI changelog or version number directly
+# The react-ui change log file should never be touched, it irrelevent.
+# The react-ui package.json version should not be touched neither, its irrelevent.
+
+# Python Code Structure:
+# All Python code files should be small and relevant to a specific functionality with an appropriate file name.

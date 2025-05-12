@@ -1,0 +1,6 @@
+Flask
+psutil
+requests
+Pillow
+packaging
+google-genai
