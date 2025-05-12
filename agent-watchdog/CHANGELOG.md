@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.0.6] - 2025-05-12
+### Added
+- Comprehensive logging for all watchdog actions to aid in debugging.
+
 ## [1.0.5] - 2025-05-12
 ### Added
 - Display logging.error messages on the console.

@@ -12,7 +12,7 @@ from agent_watchdog.update_checker import get_installed_agent_version, get_lates
 from agent_watchdog.watchdog_ui import run_ui, WatchdogTrayIcon, WatchdogSignals
 
 # Define the watchdog version
-WATCHDOG_VERSION = "1.0.5" # Incremented version for build
+WATCHDOG_VERSION = "1.0.6" # Incremented version for logging improvements
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -38,14 +38,17 @@ class WatchdogWorker(QThread):
         """
         Main loop for the worker thread.
         """
+        logging.info("WatchdogWorker thread started.")
         while self._is_running:
             try:
                 # Check if agent is running
                 agent_running = is_agent_running()
+                logging.info(f"Checking agent status. Agent running: {agent_running}")
                 self.signals.agent_status_updated.emit(agent_running)
 
                 # Get installed agent version
                 current_version = get_installed_agent_version()
+                logging.info(f"Installed agent version: {current_version}")
                 if current_version:
                     self.signals.current_version_updated.emit(current_version)
                 else:
@@ -53,6 +56,7 @@ class WatchdogWorker(QThread):
 
                 # Check for updates
                 latest_version = get_latest_online_version(self.config.get_agent_version_check_url())
+                logging.info(f"Latest online agent version: {latest_version}")
                 if latest_version:
                     self.signals.latest_version_updated.emit(latest_version)
                     # Trigger update if needed (logic moved from update_checker)
@@ -97,6 +101,7 @@ def main():
     """
     Main entry point for the Agent Watchdog application.
     """
+    logging.info("Agent Watchdog main function started.")
     # Parse command-line arguments
     parser = argparse.ArgumentParser(description="Arcade Agent Watchdog")
     parser.add_argument(
@@ -109,21 +114,25 @@ def main():
 
     print("Agent Watchdog started.")
     config = Config()
-    print(f"Using Agent Download URL: {config.get_agent_download_url()}")
-    print(f"Using Agent Version Check URL: {config.get_agent_version_check_url()}")
+    logging.info(f"Using Agent Download URL: {config.get_agent_download_url()}")
+    logging.info(f"Using Agent Version Check URL: {config.get_agent_version_check_url()}")
 
     app = run_ui() # run_ui now returns the QApplication instance
+    logging.info("Watchdog UI started.")
     tray_icon = WatchdogTrayIcon(app) # Pass the app instance
     tray_icon.show()
 
     # Create and start the worker thread
     worker = WatchdogWorker(tray_icon.signals, config)
     worker.start()
+    logging.info("WatchdogWorker thread created and started.")
 
     # Ensure the worker thread is stopped when the application quits
     app.aboutToQuit.connect(worker.stop)
+    logging.info("Connecting aboutToQuit signal to worker stop.")
 
     # Run the GUI event loop
+    logging.info("Running GUI event loop.")
     sys.exit(app.exec())
 
 
