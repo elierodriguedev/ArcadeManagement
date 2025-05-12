@@ -366,7 +366,7 @@ def download_latest_watchdog():
     if not latest_version:
         return jsonify({"error": "Could not determine latest watchdog version"}), 404
 
-    watchdog_file_path = os.path.join(os.path.dirname(__file__), 'Watchdog', latest_version, 'agent_watchdog.exe')
+    watchdog_file_path = os.path.join(os.path.dirname(__file__), 'Watchdog', latest_version, 'agent-watchdog.exe')
 
     if not os.path.exists(watchdog_file_path):
         log(f"Watchdog executable not found for version {latest_version} at {watchdog_file_path}", level=logging.ERROR)
