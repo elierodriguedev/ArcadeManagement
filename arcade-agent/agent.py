@@ -37,40 +37,8 @@ from image_utils import (
     capture_screenshot
 )
 from udp_broadcast import udp_broadcast_loop # Import the broadcast loop function
-from api_routes import ( # Import API route functions
-    ping_api,
-    get_layout_api,
-    update_layout_api,
-    start_bigbox_api,
-    stop_bigbox_api,
-    get_games_api,
-    get_playlists_api,
-    get_orphaned_games_api,
-    get_game_details_api,
-    add_to_playlist_api,
-    check_update_api,
-    trigger_update_api,
-    delete_playlist_api,
-    delete_cache_api,
-    generate_image_api,
-    generate_image_gpt_api,
-    improve_prompt_api,
-    apply_playlist_banner_api,
-    serve_playlist_banner_api,
-    get_launchbox_basepath_api,
-    list_directory_api,
-    get_file_content_api,
-    screenshot_api,
-    stream_logs_api,
-    index_route, # Import web UI routes
-    serve_react_static_files_route,
-    serve_game_image_route,
-    serve_temp_image_route
-)
-
-
 # --- Configuration ---
-AGENT_VERSION = "2.1.66"
+AGENT_VERSION = "2.1.69"
 MACHINE_TYPE = "arcade"
 LAYOUT_FILE = "control-layout.json" # Keep config needed in this file
 LOG_FILE = "agent.log" # Keep config needed in this file
@@ -91,9 +59,6 @@ else:
     # Path to React build output when running as script
     react_static_folder = os.path.join(script_dir, 'build', 'react_ui_dist')
 
-# Initialize Flask App
-app = Flask(__name__, template_folder=template_folder)
-
 # --- Logging Setup ---
 logging.basicConfig(filename=LOG_FILE, level=logging.DEBUG, format='%(asctime)s %(levelname)s: %(message)s')
 def log(msg, level=logging.INFO):
@@ -112,44 +77,12 @@ elif not os.path.isdir(react_static_folder):
 
 
 # --- Global Error Handler ---
-@app.errorhandler(Exception)
 def handle_exception(e):
     tb_str = traceback.format_exc()
     log(f"Unhandled Flask exception: {e}\n{tb_str}", level=logging.ERROR)
     response = jsonify(error="Internal Server Error", message=str(e))
     response.status_code = 500
     return response
-
-# --- Register API Routes ---
-# Use the imported functions from api_routes.py
-app.route("/api/ping", methods=["GET"])(ping_api)
-app.route("/api/control-layout", methods=["GET"])(get_layout_api)
-app.route("/api/control-layout", methods=["PUT"])(update_layout_api)
-app.route("/api/launchbox/start_bigbox", methods=["POST"])(start_bigbox_api)
-app.route("/api/launchbox/stop_bigbox", methods=["POST"])(stop_bigbox_api)
-app.route("/api/launchbox/games", methods=["GET"])(get_games_api)
-app.route("/api/launchbox/playlists", methods=["GET"])(get_playlists_api)
-app.route("/api/launchbox/orphaned_games", methods=["GET"])(get_orphaned_games_api)
-app.route("/api/launchbox/games/details", methods=["POST"])(get_game_details_api)
-app.route("/api/launchbox/playlists/add", methods=["POST"])(add_to_playlist_api)
-app.route("/api/launchbox/playlists/<path:playlist_name>", methods=["DELETE"])(delete_playlist_api)
-app.route("/api/launchbox/delete_cache", methods=["POST"])(delete_cache_api)
-app.route("/api/generate-image", methods=["GET"])(generate_image_api)
-app.route("/api/generate-image-gpt", methods=["GET"])(generate_image_gpt_api)
-app.route("/api/improve-prompt", methods=["GET"])(improve_prompt_api)
-app.route("/api/launchbox/playlists/apply_banner", methods=["POST"])(apply_playlist_banner_api)
-app.route("/api/launchbox/playlists/banner/<path:playlist_name>", methods=["GET"])(serve_playlist_banner_api)
-app.route("/api/launchbox/basepath", methods=["GET"])(get_launchbox_basepath_api)
-app.route("/api/filesystem/list", methods=["GET"])(list_directory_api)
-app.route("/api/filesystem/content", methods=["GET"])(get_file_content_api)
-app.route("/api/screenshot", methods=["GET"])(screenshot_api)
-app.route("/log")(stream_logs_api) # SSE endpoint
-
-# --- Register Web UI Routes ---
-app.route("/", endpoint='index_route')(lambda: index_route(react_static_folder))
-app.route("/assets/<path:path>", endpoint='serve_react_static_files_route')(lambda path: serve_react_static_files_route(path, react_static_folder))
-app.route("/img/<platform>/<title>", endpoint='serve_game_image_route')(lambda platform, title: serve_game_image_route(platform, title, LAUNCHBOX_PATH))
-app.route(f"/{TEMP_IMAGE_DIR}/<filename>", methods=["GET"], endpoint='serve_temp_image_route')(serve_temp_image_route)
 
 
 if __name__ == "__main__":
@@ -173,6 +106,83 @@ if __name__ == "__main__":
     if args.get_version:
         print(AGENT_VERSION)
         sys.exit(0)
+
+    # If not just getting the version, import API routes and initialize Flask app
+    from flask import Flask, jsonify, request, Response, send_file, send_from_directory
+    from api_routes import ( # Import API route functions
+        ping_api,
+        get_layout_api,
+        update_layout_api,
+        start_bigbox_api,
+        stop_bigbox_api,
+        get_games_api,
+        get_playlists_api,
+        get_orphaned_games_api,
+        get_game_details_api,
+        add_to_playlist_api,
+        check_update_api,
+        trigger_update_api,
+        delete_playlist_api,
+        delete_cache_api,
+        generate_image_api,
+        generate_image_gpt_api,
+        improve_prompt_api,
+        apply_playlist_banner_api,
+        serve_playlist_banner_api,
+        get_launchbox_basepath_api,
+        list_directory_api,
+        get_file_content_api,
+        screenshot_api,
+        stream_logs_api,
+        index_route, # Import web UI routes
+        serve_react_static_files_route,
+        serve_game_image_route,
+        serve_temp_image_route
+    )
+
+    # Initialize Flask App
+    app = Flask(__name__, template_folder=template_folder)
+
+    # --- Global Error Handler ---
+    @app.errorhandler(Exception)
+    def handle_exception(e):
+        tb_str = traceback.format_exc()
+        log(f"Unhandled Flask exception: {e}\n{tb_str}", level=logging.ERROR)
+        response = jsonify(error="Internal Server Error", message=str(e))
+        response.status_code = 500
+        return response
+
+    # --- Register API Routes ---
+    # Use the imported functions from api_routes.py
+    app.route("/api/ping", methods=["GET"])(ping_api)
+    app.route("/api/control-layout", methods=["GET"])(get_layout_api)
+    app.route("/api/control-layout", methods=["PUT"])(update_layout_api)
+    app.route("/api/launchbox/start_bigbox", methods=["POST"])(start_bigbox_api)
+    app.route("/api/launchbox/stop_bigbox", methods=["POST"])(stop_bigbox_api)
+    app.route("/api/launchbox/games", methods=["GET"])(get_games_api)
+    app.route("/api/launchbox/playlists", methods=["GET"])(get_playlists_api)
+    app.route("/api/launchbox/orphaned_games", methods=["GET"])(get_orphaned_games_api)
+    app.route("/api/launchbox/games/details", methods=["POST"])(get_game_details_api)
+    app.route("/api/launchbox/playlists/add", methods=["POST"])(add_to_playlist_api)
+    app.route("/api/launchbox/playlists/<path:playlist_name>", methods=["DELETE"])(delete_playlist_api)
+    app.route("/api/launchbox/delete_cache", methods=["POST"])(delete_cache_api)
+    app.route("/api/generate-image", methods=["GET"])(generate_image_api)
+    app.route("/api/generate-image-gpt", methods=["GET"])(generate_image_gpt_api)
+    app.route("/api/improve-prompt", methods=["GET"])(improve_prompt_api)
+    app.route("/api/launchbox/playlists/apply_banner", methods=["POST"])(apply_playlist_banner_api)
+    app.route("/api/launchbox/playlists/banner/<path:playlist_name>", methods=["GET"])(serve_playlist_banner_api)
+    app.route("/api/launchbox/basepath", methods=["GET"])(get_launchbox_basepath_api)
+    app.route("/api/filesystem/list", methods=["GET"])(list_directory_api)
+    app.route("/api/filesystem/content", methods=["GET"])(get_file_content_api)
+    app.route("/api/screenshot", methods=["GET"])(screenshot_api)
+    app.route("/log")(stream_logs_api) # SSE endpoint
+
+    # --- Register Web UI Routes ---
+    app.route("/", endpoint='index_route')(lambda: index_route(react_static_folder))
+    app.route("/assets/<path:path>", endpoint='serve_react_static_files_route')(lambda path: serve_react_static_files_route(path, react_static_folder))
+    app.route("/img/<platform>/<title>", endpoint='serve_game_image_route')(lambda platform, title: serve_game_image_route(platform, title, LAUNCHBOX_PATH))
+    app.route(f"/{TEMP_IMAGE_DIR}/<filename>", methods=["GET"], endpoint='serve_temp_image_route')(serve_temp_image_route)
+
 
     # --- Create temporary image directory ---
     create_temp_image_directory()

@@ -4,6 +4,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.dev/spec/v2.0.0.html).
 
+## [2.1.69] - 2025-05-12
+### Changed
+- Incremented version for build.
+## [2.1.68] - 2025-05-12
+### Changed
+- Incremented version for build.
+## [2.1.67] - 2025-05-12
+### Changed
+- Incremented version for build.
 ## [2.1.66] - 2025-05-12
 ### Changed
 - Updated the Windows build script to use `pushd` and `popd` when running from a UNC path.
