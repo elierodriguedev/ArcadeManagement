@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.0.5] - 2025-05-12
+### Added
+- Display logging.error messages on the console.
+
 ## [1.0.4] - 2025-05-12
 ### Changed
 - Incremented version for build.

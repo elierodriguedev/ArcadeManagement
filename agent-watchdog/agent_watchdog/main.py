@@ -12,10 +12,17 @@ from agent_watchdog.update_checker import get_installed_agent_version, get_lates
 from agent_watchdog.watchdog_ui import run_ui, WatchdogTrayIcon, WatchdogSignals
 
 # Define the watchdog version
-WATCHDOG_VERSION = "1.0.4" # Incremented version for build
+WATCHDOG_VERSION = "1.0.5" # Incremented version for build
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+
+# Add a handler to display ERROR level messages on the console
+console_handler = logging.StreamHandler(sys.stdout)
+console_handler.setLevel(logging.ERROR)
+formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
+console_handler.setFormatter(formatter)
+logging.getLogger().addHandler(console_handler)
 
 class WatchdogWorker(QThread):
     """
