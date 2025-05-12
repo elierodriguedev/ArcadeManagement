@@ -63,7 +63,7 @@ WATCHDOG_VERSION = "(\d+\.\d+\.\d+)"
         exit 1
     }
 
-    $DEST_DIR = Join-Path ".." "arcade-web-controller\Watchdog\$WATCHDOG_VERSION"
+    $DEST_DIR = "\\poweredge.local\Projets\Studio Code\ArcadeProject\arcade-web-controller\watchdog"
     $SOURCE_PATH = "dist\main.exe" # PyInstaller names the executable after the main script by default
 
     # Create destination directory if it doesn't exist
