@@ -12,7 +12,7 @@ from agent_watchdog.update_checker import get_installed_agent_version, get_lates
 from agent_watchdog.watchdog_ui import run_ui, WatchdogTrayIcon, WatchdogSignals
 
 # Define the watchdog version
-WATCHDOG_VERSION = "1.0.6" # Incremented version for logging improvements
+WATCHDOG_VERSION = "1.0.7" # Incremented version for build
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -116,24 +116,28 @@ def main():
     config = Config()
     logging.info(f"Using Agent Download URL: {config.get_agent_download_url()}")
     logging.info(f"Using Agent Version Check URL: {config.get_agent_version_check_url()}")
-
-    app = run_ui() # run_ui now returns the QApplication instance
-    logging.info("Watchdog UI started.")
-    tray_icon = WatchdogTrayIcon(app) # Pass the app instance
-    tray_icon.show()
-
-    # Create and start the worker thread
-    worker = WatchdogWorker(tray_icon.signals, config)
-    worker.start()
-    logging.info("WatchdogWorker thread created and started.")
-
-    # Ensure the worker thread is stopped when the application quits
-    app.aboutToQuit.connect(worker.stop)
-    logging.info("Connecting aboutToQuit signal to worker stop.")
-
-    # Run the GUI event loop
-    logging.info("Running GUI event loop.")
-    sys.exit(app.exec())
+    
+    try:
+        app = run_ui() # run_ui now returns the QApplication instance
+        logging.info("Watchdog UI started.")
+        tray_icon = WatchdogTrayIcon(app) # Pass the app instance
+        tray_icon.show()
+    
+        # Create and start the worker thread
+        worker = WatchdogWorker(tray_icon.signals, config)
+        worker.start()
+        logging.info("WatchdogWorker thread created and started.")
+    
+        # Ensure the worker thread is stopped when the application quits
+        app.aboutToQuit.connect(worker.stop)
+        logging.info("Connecting aboutToQuit signal to worker stop.")
+    
+        # Run the GUI event loop
+        logging.info("Running GUI event loop.")
+        sys.exit(app.exec())
+    except Exception as e:
+        logging.error(f"An error occurred during UI initialization or event loop: {e}")
+        sys.exit(1) # Exit with a non-zero code to indicate an error
 
 
 if __name__ == "__main__":

@@ -1,5 +1,9 @@
 # Changelog
 
+## [1.0.7] - 2025-05-12
+### Changed
+- Incremented version for build.
+
 ## [1.0.6] - 2025-05-12
 ### Added
 - Comprehensive logging for all watchdog actions to aid in debugging.
