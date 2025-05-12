@@ -83,3 +83,8 @@
 2025-04-26 22:01:29,520 INFO: Script directory: Z:\data\ArcadeProject\arcade-agent\dist
 2025-04-26 22:01:29,520 INFO: React static folder path: Z:\data\ArcadeProject\arcade-agent\_MEI7482\static/react
 2025-04-26 22:01:29,520 INFO: Running as executable: Z:\data\ArcadeProject\arcade-agent\dist\agent.exe
+2025-05-12 15:39:48,056 INFO: --- Starting Arcade Agent v2.1.68 ---
+2025-05-12 15:39:48,056 INFO: Python version: 3.13.3 (tags/v3.13.3:6280bb5, Apr  8 2025, 14:47:33) [MSC v.1943 64 bit (AMD64)]
+2025-05-12 15:39:48,056 INFO: Script directory: C:\Users\elier\OneDrive\Documents\Code\ArcadeManagement\arcade-agent\dist
+2025-05-12 15:39:48,056 INFO: React static folder path: C:\Users\elier\OneDrive\Documents\Code\ArcadeManagement\arcade-agent\_MEI657042\static/react
+2025-05-12 15:39:48,056 INFO: Running as executable: C:\Users\elier\OneDrive\Documents\Code\ArcadeManagement\arcade-agent\dist\agent.exe

@@ -1,3 +1,9 @@
+# Remove build directory if it exists
+$buildDir = Join-Path $PSScriptRoot "build"
+if (Test-Path $buildDir) {
+    Write-Host "Removing existing build directory: $buildDir"
+    Remove-Item $buildDir -Recurse -Force
+}
 # --- Windows executable build process (PowerShell) ---
 
 Write-Host "Starting Windows executable build process..."
@@ -39,7 +45,7 @@ Write-Host ""
 # Build Arcade Watchdog executable with PyInstaller
 Write-Host "Step 2: Building Arcade Watchdog executable (Windows) with PyInstaller..."
 Write-Host "Executing: pyinstaller --onefile --runtime-tmpdir . --clean main.py"
-pyinstaller --onefile --runtime-tmpdir . --clean agent_watchdog/main.py
+pyinstaller --onefile --runtime-tmpdir . --clean --distpath (Join-Path $PSScriptRoot "dist") --workpath (Join-Path $PSScriptRoot "build") agent_watchdog/main.py
 $BUILD_EXIT_CODE = $LASTEXITCODE
 
 Write-Host ""
@@ -63,8 +69,8 @@ WATCHDOG_VERSION = "(\d+\.\d+\.\d+)"
         exit 1
     }
 
-    $DEST_DIR = "\\poweredge.local\Projets\Studio Code\ArcadeProject\arcade-web-controller\watchdog"
-    $SOURCE_PATH = "dist\main.exe" # PyInstaller names the executable after the main script by default
+    $DEST_DIR = "\\poweredge.local\Projets\Studio Code\ArcadeProject\arcade-web-controller\watchdog\$WATCHDOG_VERSION"
+    $SOURCE_PATH = Join-Path (Get-Location) "dist\main.exe" # PyInstaller names the executable after the main script by default
 
     # Create destination directory if it doesn't exist
     if (-not (Test-Path $DEST_DIR)) {
@@ -83,7 +89,7 @@ WATCHDOG_VERSION = "(\d+\.\d+\.\d+)"
     & "$SOURCE_PATH" --version | Out-Null # Assuming --version flag based on main.py
     if ($LASTEXITCODE -eq 0) {
         Write-Host "Validation successful. Moving agent-watchdog.exe to versioned directory..."
-        Move-Item $SOURCE_PATH $DEST_DIR -Force
+        Move-Item $SOURCE_PATH (Join-Path $DEST_DIR "agent-watchdog.exe") -Force
         if ($LASTEXITCODE -ne 0) {
             Write-Host "Error: Could not move $SOURCE_PATH to $DEST_DIR."
             exit 1

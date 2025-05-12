@@ -231,3 +231,18 @@
 2025-04-19 15:36:44,385 DEBUG: https://arcade.elierodrigue.cloud:443 "GET /api/agent/latest_version HTTP/1.1" 200 None
 2025-04-19 15:36:44,386 INFO: [UpdateCheck] Current version: 2.1.46, Latest version available: 2.1.46
 2025-04-19 15:36:44,386 INFO: [UpdateCheck] Agent is running the latest version.
+2025-05-12 15:26:55,717 INFO: --- Starting Arcade Agent v2.1.67 ---
+2025-05-12 15:26:55,717 INFO: Python version: 3.13.3 (tags/v3.13.3:6280bb5, Apr  8 2025, 14:47:33) [MSC v.1943 64 bit (AMD64)]
+2025-05-12 15:26:55,717 INFO: Script directory: C:\Users\elier\OneDrive\Documents\Code\ArcadeManagement\dist
+2025-05-12 15:26:55,717 INFO: React static folder path: C:\Users\elier\OneDrive\Documents\Code\ArcadeManagement\_MEI606482\static/react
+2025-05-12 15:26:55,717 INFO: Running as executable: C:\Users\elier\OneDrive\Documents\Code\ArcadeManagement\dist\agent.exe
+2025-05-12 16:00:39,256 INFO: --- Starting Arcade Agent v2.1.68 ---
+2025-05-12 16:00:39,256 INFO: Python version: 3.13.3 (tags/v3.13.3:6280bb5, Apr  8 2025, 14:47:33) [MSC v.1943 64 bit (AMD64)]
+2025-05-12 16:00:39,256 INFO: Script directory: C:\Users\elier\OneDrive\Documents\Code\ArcadeManagement\arcade-agent\dist
+2025-05-12 16:00:39,256 INFO: React static folder path: C:\Users\elier\OneDrive\Documents\Code\ArcadeManagement\_MEI771522\static/react
+2025-05-12 16:00:39,256 INFO: Running as executable: C:\Users\elier\OneDrive\Documents\Code\ArcadeManagement\arcade-agent\dist\agent.exe
+2025-05-12 16:02:26,094 INFO: --- Starting Arcade Agent v2.1.69 ---
+2025-05-12 16:02:26,095 INFO: Python version: 3.13.3 (tags/v3.13.3:6280bb5, Apr  8 2025, 14:47:33) [MSC v.1943 64 bit (AMD64)]
+2025-05-12 16:02:26,095 INFO: Script directory: C:\Users\elier\OneDrive\Documents\Code\ArcadeManagement\arcade-agent\dist
+2025-05-12 16:02:26,095 INFO: React static folder path: C:\Users\elier\OneDrive\Documents\Code\ArcadeManagement\_MEI797802\static/react
+2025-05-12 16:02:26,095 INFO: Running as executable: C:\Users\elier\OneDrive\Documents\Code\ArcadeManagement\arcade-agent\dist\agent.exe

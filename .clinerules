@@ -14,6 +14,7 @@
 # 2. Add a corresponding entry to the agent's CHANGELOG.md file.
 # 3. Execute the `build_agent_windows.sh` script for Linux or `build_agent_windows.ps1` for Windows to build the updated agent executable.
 # If there's any error, you need to fix them.
+# 4. After a successful build, perform a git add . and then commit and push.
 # The agent version in the agent's changelog need to absolutely match the latest version in the agent.py file. Always validate this before you build and correct if there's any issue.
 
 
@@ -23,6 +24,7 @@
 # 2. Add a corresponding entry to the watchdog's CHANGELOG.md file.
 # 3. Execute the `agent-watchdog/build_watchdog_windows.sh` script for Linux or `agent-watchdog/build_watchdog_windows.ps1` for Windows to build the updated watchdog executable.
 # If there's any error, you need to fix them.
+# 4. After a successful build, perform a git add . and then commit and push.
 # The watchdog version in the watchdog's changelog need to absolutely match the latest version in the relevant watchdog code. Always validate this before you build and correct if there's any issue.
 
 

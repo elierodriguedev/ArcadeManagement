@@ -1,3 +1,9 @@
+# Remove build directory if it exists
+$buildDir = Join-Path $PSScriptRoot "build"
+if (Test-Path $buildDir) {
+    Write-Host "Removing existing build directory: $buildDir"
+    Remove-Item $buildDir -Recurse -Force
+}
 # --- Windows executable build process (PowerShell) ---
 
 Write-Host "Starting Windows executable build process..."
@@ -63,7 +69,7 @@ if ($REACT_BUILD_EXIT_CODE -eq 0) {
     Write-Host "Step 3: Building Arcade Agent executable (Windows) with PyInstaller..."
     # Note: Paths in --add-data need to be Windows paths relative to the script's execution location.
     Write-Host "Executing: pyinstaller --onefile --add-data 'templates;templates' --add-data 'build\react_ui_dist;static\react' --runtime-tmpdir . --clean agent.py"
-    pyinstaller --onefile --add-data (Join-Path $PSScriptRoot "templates;templates") --add-data (Join-Path $PSScriptRoot "build\react_ui_dist;static\react") --runtime-tmpdir . --clean (Join-Path $PSScriptRoot "agent.py")
+    pyinstaller --onefile --hidden-import api_routes --add-data (Join-Path $PSScriptRoot "build\react_ui_dist;static\react") --runtime-tmpdir . --clean --distpath (Join-Path $PSScriptRoot "dist") --workpath (Join-Path $PSScriptRoot "build") (Join-Path $PSScriptRoot "agent.py")
     $BUILD_EXIT_CODE = $LASTEXITCODE
 
     Write-Host ""
@@ -85,7 +91,7 @@ if ($REACT_BUILD_EXIT_CODE -eq 0) {
             exit 1
         }
 
-        $DEST_DIR = Join-Path (Join-Path $PSScriptRoot "..") "arcade-web-controller\Agent\$AGENT_VERSION"
+        $DEST_DIR = "\\poweredge.local\Projets\Studio Code\ArcadeProject\arcade-web-controller\agent\$AGENT_VERSION"
         $SOURCE_PATH = Join-Path $PSScriptRoot "dist\agent.exe"
 
         # Create destination directory if it doesn't exist

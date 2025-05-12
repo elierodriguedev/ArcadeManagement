@@ -1,5 +1,8 @@
 # Changelog
 
+## [1.0.4] - 2025-05-12
+### Changed
+- Incremented version for build.
 ## [1.0.3] - 2025-05-12
 ### Changed
 - Incremented version for build.
